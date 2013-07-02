@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TestData">
+	<typeAlias alias="TestData" type="com.gtt.dao.test.TestData" />
+	
+	<resultMap id="testDataResult" class="TestData">
+		<result column="id" property="id"/>
+		<result column="name" property="name"/>
+	</resultMap>	 
+	
+	<select id="findAll" resultMap="testDataResult" parameterClass="map">
+		<![CDATA[
+			SELECT *
+			FROM TestData
+		]]>
+	</select>
+	
+</sqlMap>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Account">
+
+	<typeAlias alias="Account" type="com.gtt.accounting.persistence.entity.Account" />
+	
+	<resultMap id="simpleResult" class="Account">
+		<result column="id" property="id"/>
+		<result column="userId" property="userId"/>
+		<result column="price" property="price"/>
+		<result column="memo" property="memo"/>
+		<result column="created" property="created"/>
+		<result column="lastModified" property="lastModified"/>
+	</resultMap>	 
+	
+	<insert id="insert" parameterClass="map">
+		INSERT INTO Act_Account
+			(userId, price, memo, created, lastModified)
+		VALUES
+			(#userId#, #price#, #memo#, NOW(), NOW())
+		<selectKey resultClass="long" keyProperty="id" >     
+       		SELECT @@IDENTITY AS id  
+       	</selectKey>
+	</insert>
+	
+	<select id="load" resultMap="simpleResult" parameterClass="map">
+		SELECT id, userId, price, memo, created, lastModified
+		FROM Act_Account
+		WHERE id=#id#
+	</select>
+	
+	<select id="findByUser" resultMap="simpleResult" parameterClass="map">
+		SELECT id, userId, price, memo, created, lastModified
+		FROM Act_Account
+		WHERE userId=#userId#
+		ORDER BY $orderBy$
+	</select>
+
+	<select id="paginateByUser" resultMap="simpleResult" parameterClass="map">
+		SELECT id, userId, price, memo, created, lastModified
+		FROM Act_Account
+		WHERE userId=#userId#
+		ORDER BY $orderBy$
+	</select>
+
+	<select id="paginateByUser_COUNT" resultClass="java.lang.Integer" parameterClass="map">
+		SELECT count(id)
+		FROM Act_Account
+		WHERE userId=#userId#
+	</select>
+	
+	<update id="update" parameterClass="map">
+		UPDATE Act_Account
+		SET price=#price#, memo=#memo#, lastModified=NOW()
+		WHERE id=#id#
+	</update>
+	
+</sqlMap>
