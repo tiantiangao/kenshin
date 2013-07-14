@@ -7,7 +7,7 @@ package com.gtt.kenshin.log;
  * @author tiantian.gao
  * 
  */
-public abstract class AbstractKenshinLogger implements KensinLogger {
+public abstract class AbstractKenshinLogger implements KenshinLogger {
 
 	@Override
 	public void debug(Object message, Throwable t) {

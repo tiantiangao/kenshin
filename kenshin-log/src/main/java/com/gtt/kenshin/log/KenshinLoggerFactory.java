@@ -15,19 +15,19 @@ public class KenshinLoggerFactory {
 
 	private static KenshinLoggerBuilder builder = new Slf4jLoggerBuilder();// 默认使用slf4j的日志生成器
 
-	private static Map<String, KensinLogger> caches = new WeakHashMap<String, KensinLogger>();
+	private static Map<String, KenshinLogger> caches = new WeakHashMap<String, KenshinLogger>();
 
-	public static KensinLogger getLogger(Class<?> clazz) {
+	public static KenshinLogger getLogger(Class<?> clazz) {
 		return getLogger(clazz.getName());
 	}
 
-	private static KensinLogger getLogger(String name) {
+	private static KenshinLogger getLogger(String name) {
 		if (name == null) {
 			throw new IllegalArgumentException("log name is null.");
 		}
 
 		// load cache
-		KensinLogger logger = caches.get(name);
+		KenshinLogger logger = caches.get(name);
 
 		if (logger != null) {
 			return logger;
