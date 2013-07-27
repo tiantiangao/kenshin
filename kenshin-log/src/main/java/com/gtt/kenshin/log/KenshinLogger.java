@@ -6,7 +6,7 @@ package com.gtt.kenshin.log;
  * @author tiantian.gao
  * 
  */
-public interface KensinLogger {
+public interface KenshinLogger {
 
 	/**
 	 * Debug level message

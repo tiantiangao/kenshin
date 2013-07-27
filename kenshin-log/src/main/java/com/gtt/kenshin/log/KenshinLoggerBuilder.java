@@ -15,6 +15,6 @@ public interface KenshinLoggerBuilder {
 	 * @param name
 	 * @return
 	 */
-	KensinLogger buildLogger(String name);
+	KenshinLogger buildLogger(String name);
 
 }
