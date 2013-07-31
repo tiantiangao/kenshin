@@ -2,6 +2,7 @@ package com.gtt.accounting.persistence.test.dao;
 
 import java.util.List;
 
+import com.gtt.accounting.AbstractTestWithTranx;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -9,7 +10,6 @@ import com.gtt.accounting.persistence.dao.AccountDao;
 import com.gtt.accounting.persistence.entity.Account;
 import com.gtt.accounting.persistence.enums.TimeOrder;
 import com.gtt.kenshin.dao.model.PageModel;
-import com.gtt.kenshin.test.base.AbstractTestWithTranx;
 
 /**
  * AccountDaoTest
