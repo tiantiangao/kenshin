@@ -1,0 +1,35 @@
+10
+
+dir
+0
+http://192.168.8.45:81/svn/dianping/dianping/message/release/git/kenshin/kenshin-cache/src/main/java/com
+http://192.168.8.45:81/svn/dianping
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+31d2b4a3-e020-480a-a5cc-b8d9ebbfd94e
+
+gtt
+dir
+
+
+
+add
+

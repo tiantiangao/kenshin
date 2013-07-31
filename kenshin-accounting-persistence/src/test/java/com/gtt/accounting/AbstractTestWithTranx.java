@@ -1,4 +1,4 @@
-package com.gtt.kenshin.test.base;
+package com.gtt.accounting;
 
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;

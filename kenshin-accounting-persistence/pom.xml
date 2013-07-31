@@ -28,11 +28,6 @@
 			<artifactId>kenshin-dao</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.gtt</groupId>
-			<artifactId>kenshin-test</artifactId>
-			<version>1.0.0</version>
-		</dependency>
 	</dependencies>
 	
 	<build>

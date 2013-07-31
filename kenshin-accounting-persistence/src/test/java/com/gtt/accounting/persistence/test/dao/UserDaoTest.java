@@ -1,11 +1,11 @@
 package com.gtt.accounting.persistence.test.dao;
 
+import com.gtt.accounting.AbstractTestWithTranx;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.gtt.accounting.persistence.dao.UserDao;
 import com.gtt.accounting.persistence.entity.User;
-import com.gtt.kenshin.test.base.AbstractTestWithTranx;
 
 /**
  * UserDaoTest
