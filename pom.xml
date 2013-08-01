@@ -28,7 +28,8 @@
 		<module>kenshin-dao</module>
 		<module>kenshin-cache</module>
 	</modules>
-	
+
+    <dependencyManagement>
 	<dependencies>
 		<!-- begining of test -->
 		<dependency>
@@ -153,6 +154,8 @@
 		</dependency>
 		<!-- end of ibatis -->
 	</dependencies>
+    </dependencyManagement>
+
 
 	<build>
 		<plugins>
