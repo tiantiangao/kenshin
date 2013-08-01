@@ -16,6 +16,9 @@
 		<ibatis.version>2.3.4.726</ibatis.version>
 		<struts.version>2.1.8</struts.version>
 		<project.encoding>UTF-8</project.encoding>
+		<mockito.version>1.8.5</mockito.version>
+		<powermock.version>1.4.10</powermock.version>
+		<junit.version>4.4</junit.version>
 		<env>dev</env>
 	</properties>
 	
@@ -28,18 +31,31 @@
 	
 	<dependencies>
 		<!-- begining of test -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.4</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>2.5.2</version>
-			<scope>test</scope>
-		</dependency>
+		 <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
 		<!-- end of test -->
 
 		<!-- begining of logging -->
