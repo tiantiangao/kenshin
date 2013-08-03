@@ -6,6 +6,7 @@
 	<groupId>com.gtt</groupId>
 	<artifactId>kenshin</artifactId>
 	<version>1.0.0</version>
+    <name>kenshin</name>
 	<packaging>pom</packaging>
 
 	<properties>

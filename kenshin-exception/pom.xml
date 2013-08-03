@@ -11,5 +11,7 @@
 	<groupId>com.gtt</groupId>
 	<artifactId>kenshin-exception</artifactId>
 	<version>1.0.0</version>
+    <name>kenshin-exception</name>
+    <packaging>jar</packaging>
 
 </project>
