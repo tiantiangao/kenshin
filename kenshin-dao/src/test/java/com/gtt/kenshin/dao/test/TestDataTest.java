@@ -25,4 +25,8 @@ public class TestDataTest extends AbstractTestWithTranx {
 		System.out.println("总数量：" + all.size());
 		System.out.println("测试结束");
 	}
+
+	public void setTestDataDao(TestDataDao testDataDao) {
+		this.testDataDao = testDataDao;
+	}
 }
