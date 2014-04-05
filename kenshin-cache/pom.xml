@@ -11,6 +11,8 @@
 	<groupId>com.gtt</groupId>
 	<artifactId>kenshin-cache</artifactId>
 	<version>1.0.0</version>
+    <name>kenshin-cache</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>

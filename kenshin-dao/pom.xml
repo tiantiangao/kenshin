@@ -11,6 +11,7 @@
 	<groupId>com.gtt</groupId>
 	<artifactId>kenshin-dao</artifactId>
 	<version>1.0.0</version>
+    <name>kenshin-dao</name>
 	<packaging>jar</packaging>
 
 	<dependencies>
