@@ -12,6 +12,8 @@
 	<groupId>com.gtt</groupId>
 	<artifactId>kenshin-log</artifactId>
 	<version>1.0.0</version>
+    <name>kenshin-log</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
