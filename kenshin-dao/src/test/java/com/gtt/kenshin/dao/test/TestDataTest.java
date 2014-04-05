@@ -1,14 +1,13 @@
 package com.gtt.kenshin.dao.test;
 
-import java.util.List;
-
 import com.gtt.dao.AbstractTestWithTranx;
+import com.gtt.dao.test.TestData;
+import com.gtt.dao.test.TestDataDao;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 
-import com.gtt.dao.test.TestData;
-import com.gtt.dao.test.TestDataDao;
+import java.util.List;
 
 public class TestDataTest extends AbstractTestWithTranx {
 
