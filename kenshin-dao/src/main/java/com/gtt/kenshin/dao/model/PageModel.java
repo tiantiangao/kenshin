@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2011-5-24
  * 
  */
-public class PageModel {
+public class PageModel<T> {
 
 	private static final long serialVersionUID = -8802145055234572275L;
 
@@ -19,7 +19,7 @@ public class PageModel {
 
 	private int page = 1;// 当前页数
 
-	private List<?> records;// 记录集合
+	private List<T> records;// 记录集合
 
 	private String sortField;// 排序字段
 
@@ -72,11 +72,11 @@ public class PageModel {
 		this.page = page;
 	}
 
-	public List<?> getRecords() {
+	public List<T> getRecords() {
 		return records;
 	}
 
-	public void setRecords(List<?> records) {
+	public void setRecords(List<T> records) {
 		this.records = records;
 	}
 

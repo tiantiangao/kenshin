@@ -24,7 +24,7 @@ public interface GenericDao {
 	/**
 	 * Execute query for multiple page
 	 */
-	PageModel executePageQuery(DaoMethod DaoMethod) throws DataAccessException;
+	<T> PageModel<T> executePageQuery(DaoMethod DaoMethod) throws DataAccessException;
 
 	/**
 	 * Execute query only return one record,if multiple records are exists,

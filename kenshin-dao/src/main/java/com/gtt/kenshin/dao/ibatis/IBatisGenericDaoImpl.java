@@ -59,9 +59,9 @@ public class IBatisGenericDaoImpl extends SqlMapClientDaoSupport implements Gene
 	}
 
 	@Override
-	public PageModel executePageQuery(DaoMethod DaoMethod) throws DataAccessException {
+	public <T> PageModel<T> executePageQuery(DaoMethod DaoMethod) throws DataAccessException {
 
-		PageModel pageModel = new PageModel();
+		PageModel<T> pageModel = new PageModel<T>();
 
 		// count
 		int recordCount = queryTotalCount(DaoMethod);
@@ -84,9 +84,9 @@ public class IBatisGenericDaoImpl extends SqlMapClientDaoSupport implements Gene
 			pageModel.setPage(pageNo);
 			pageModel.setPageSize(max);
 			pageModel.setRecordCount(recordCount);
-			pageModel.setRecords((List<?>) executeLimit(DaoMethod));
+			pageModel.setRecords((List<T>) executeLimit(DaoMethod));
 		} else {
-			pageModel.setRecords(new ArrayList<Object>());
+			pageModel.setRecords(new ArrayList<T>());
 		}
 
 		return pageModel;

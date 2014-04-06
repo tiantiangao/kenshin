@@ -10,9 +10,23 @@
 	
 	<select id="findAll" resultMap="testDataResult" parameterClass="map">
 		<![CDATA[
-			SELECT *
+			SELECT id, name
 			FROM TestData
 		]]>
 	</select>
-	
+
+    <select id="page" resultMap="testDataResult" parameterClass="map">
+        <![CDATA[
+			SELECT id, name
+			FROM TestData
+		]]>
+    </select>
+
+    <select id="page_COUNT" resultClass="int" parameterClass="map">
+        <![CDATA[
+			SELECT count(*)
+			FROM TestData
+		]]>
+    </select>
+
 </sqlMap>
