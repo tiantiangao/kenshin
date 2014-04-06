@@ -5,9 +5,10 @@ import com.gtt.dao.test.TestData;
 import com.gtt.dao.test.TestDataDao;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
 
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestDataTest extends AbstractTestWithTranx {
 
@@ -16,17 +17,12 @@ public class TestDataTest extends AbstractTestWithTranx {
 
 	@Test
 	public void test() {
-		System.out.println("测试开始");
-
-		Assert.notNull(testDataDao);
+		assertThat(testDataDao).isNotNull();
 
 		List<TestData> all = testDataDao.findAll();
 
-		System.out.println("总数量：" + all.size());
-		System.out.println("测试结束");
+		assertThat(all).isNotNull();
+		assertThat(all.size()).isEqualTo(1);
 	}
 
-	public void setTestDataDao(TestDataDao testDataDao) {
-		this.testDataDao = testDataDao;
-	}
 }

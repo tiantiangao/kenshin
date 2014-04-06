@@ -2,3 +2,5 @@ CREATE TABLE TestData (
   id INTEGER NOT NULL PRIMARY KEY,
   name VARCHAR(20) NOT NULL
 );
+
+INSERT INTO TestData(id,name) VALUES (1,'aa');
