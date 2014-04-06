@@ -7,8 +7,16 @@ public class StaticDecoratorImpl implements StaticDecorator {
 
 	@Override
 	public String decorate(String resource, boolean decorate) {
-		String fullPathResource = getStaticServer(resource) + resource;
+		String fullPathResource = fillFullPath(resource);
 		return decorate ? decorate(fullPathResource) : fullPathResource;
+	}
+
+	/**
+	 * @param resource
+	 * @return
+	 */
+	protected String fillFullPath(String resource) {
+		return getStaticServer(resource) + resource;
 	}
 
 	/**
