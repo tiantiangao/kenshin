@@ -5,6 +5,6 @@ package com.gtt.kenshin.web.util;
  */
 public interface StaticDecorator {
 
-	String decorate(String resource);
+	String decorate(String resource, boolean decorate);
 
 }

@@ -5,7 +5,7 @@ package com.gtt.kenshin.web.util;
  */
 public class StaticFile {
 
-	public static String decorate(String resource) {
+	public static String decorate(String resource, boolean decorate) {
 		StaticDecorator decorator = null;
 		try {
 			decorator = SpringLocator.getBean("CustomStaticProvider");
@@ -14,7 +14,7 @@ public class StaticFile {
 		if (decorator == null) {
 			decorator = SpringLocator.getBean("KenshinStaticProvider");
 		}
-		return decorator.decorate(resource);
+		return decorator.decorate(resource, decorate);
 	}
 
 }
