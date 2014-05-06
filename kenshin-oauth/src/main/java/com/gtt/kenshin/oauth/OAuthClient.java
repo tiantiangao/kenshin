@@ -1,6 +1,7 @@
 package com.gtt.kenshin.oauth;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * 第三方OAuth提供者工厂类
@@ -37,5 +38,17 @@ public interface OAuthClient {
 	 * @return
 	 */
 	String getUserNickname(String oauthType, ThirdUserInfo thirdUserInfo);
+
+	/**
+	 * 调用指定的第三方接口
+	 *
+	 * @param url
+	 * @param thirdUserInfo
+	 * @param params
+	 * @param isPost
+	 * @return
+	 */
+	Map<String, Object> invoke(String oauthType, String url, ThirdUserInfo thirdUserInfo, Map<String, String> params,
+							   boolean isPost);
 
 }

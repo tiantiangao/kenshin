@@ -29,6 +29,28 @@ com.gtt.kenshin.oauth.OAuthClient
 	 * @return
 	 */
 	ThirdUserInfo getUserInfo(String oauthType, HttpServletRequest request, String redir);
+
+	/**
+	 * 获取用户昵称
+	 *
+	 * @param oauthType
+	 * @param thirdUserInfo
+	 * @return
+	 */
+	String getUserNickname(String oauthType, ThirdUserInfo thirdUserInfo);
+
+	/**
+	 * 调用指定的第三方接口
+	 *
+	 * @param url
+	 * @param thirdUserInfo
+	 * @param params
+	 * @param isPost
+	 * @return
+	 */
+	Map<String, Object> invoke(String oauthType, String url, ThirdUserInfo thirdUserInfo, Map<String, String> params,
+							   boolean isPost);
+
 ```
 
 
@@ -98,3 +120,8 @@ redirect(authorizeUri);
 ```java  
 ThirdUserInfo thirdUserInfo = oAuthClient.getUserInfo(type, request, redir);  
 ```  
+
+#### 4. 获取用户信息
+```java
+userNickname = oAuthClient.getUserNickname(type, thirdUserInfo);
+```
