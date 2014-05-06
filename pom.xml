@@ -28,6 +28,7 @@
 		<module>kenshin-exception</module>
 		<module>kenshin-dao</module>
 		<module>kenshin-cache</module>
+        <module>kenshin-oauth</module>
         <module>kenshin-web</module>
 	</modules>
 
