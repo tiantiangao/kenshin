@@ -36,6 +36,17 @@ public class OAuthClientDefaultImpl implements OAuthClient {
 		return providerMap.get(oauthType).getUserInfo(request, redir);
 	}
 
+	@Override
+	public String getUserNickname(String oauthType, ThirdUserInfo thirdUserInfo) {
+		Preconditions.checkArgument(StringUtils.isNotBlank(oauthType), "oauthType must not be empty");
+		Preconditions.checkArgument(providerMap.containsKey(oauthType), "oauthType must exist");
+		Preconditions.checkNotNull(thirdUserInfo);
+		Preconditions.checkArgument(StringUtils.isNotBlank(thirdUserInfo.getAccessToken()));
+		Preconditions.checkArgument(StringUtils.isNotBlank(thirdUserInfo.getThirdUserId()));
+
+		return providerMap.get(oauthType).getUserNickname(thirdUserInfo);
+	}
+
 	public void setProviderList(List<OAuthProvider> providerList) {
 		Preconditions.checkArgument(!CollectionUtils.isEmpty(providerList));
 

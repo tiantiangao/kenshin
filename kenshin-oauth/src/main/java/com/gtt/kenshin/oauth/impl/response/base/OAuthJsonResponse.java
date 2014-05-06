@@ -1,6 +1,5 @@
 package com.gtt.kenshin.oauth.impl.response.base;
 
-import com.gtt.kenshin.oauth.impl.response.base.OAuthResponse;
 import com.gtt.kenshin.oauth.impl.util.JsonUtils;
 
 import java.util.Map;
@@ -22,6 +21,11 @@ public class OAuthJsonResponse implements OAuthResponse {
 	public String getValue(String key) {
 		Object value = parameters.get(key);
 		return value == null ? null : String.valueOf(value);
+	}
+
+	@Override
+	public Map<String, Object> getValues() {
+		return parameters;
 	}
 
 }

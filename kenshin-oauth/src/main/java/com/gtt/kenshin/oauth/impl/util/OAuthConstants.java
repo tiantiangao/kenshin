@@ -40,6 +40,7 @@ public class OAuthConstants {
 		public static final String REFRESH_TOKEN = "refresh_token";
 
 		public static final String OPENID = "openid";
+		public static final String OAUTH_CONSUMER_KEY = "oauth_consumer_key";
 		public static final String UID = "uid";
 
 	}

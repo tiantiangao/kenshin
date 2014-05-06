@@ -1,7 +1,7 @@
 package com.gtt.kenshin.oauth.impl.response.base;
 
+import com.google.common.base.Function;
 import com.google.common.collect.Maps;
-import com.gtt.kenshin.oauth.impl.response.base.OAuthResponse;
 import com.gtt.kenshin.oauth.impl.util.OAuthUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,6 +33,16 @@ public class OAuthRequestResponse implements OAuthResponse {
 	public String getValue(String key) {
 		String value = parameters.get(key);
 		return value == null ? null : value;
+	}
+
+	@Override
+	public Map<String, Object> getValues() {
+		return Maps.transformValues(parameters, new Function<String, Object>() {
+			@Override
+			public Object apply(String input) {
+				return input;
+			}
+		});
 	}
 
 }

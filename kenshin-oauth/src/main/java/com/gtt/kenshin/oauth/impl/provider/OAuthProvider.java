@@ -4,6 +4,7 @@ package com.gtt.kenshin.oauth.impl.provider;
 import com.gtt.kenshin.oauth.ThirdUserInfo;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * @author tiantiangao
@@ -41,5 +42,24 @@ public interface OAuthProvider {
 	 * @return
 	 */
 	ThirdUserInfo getUserInfo(HttpServletRequest request, String redirectUri);
+
+	/**
+	 * 获取用户昵称
+	 *
+	 * @param thirdUserInfo
+	 * @return
+	 */
+	String getUserNickname(ThirdUserInfo thirdUserInfo);
+
+	/**
+	 * 调用一个第三方接口
+	 *
+	 * @param url
+	 * @param thirdUserInfo
+	 * @param params
+	 * @param isPost
+	 * @return
+	 */
+	Map<String, Object> invoke(String url, ThirdUserInfo thirdUserInfo, Map<String, String> params, boolean isPost);
 
 }
