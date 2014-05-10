@@ -12,6 +12,7 @@ import com.gtt.kenshin.oauth.impl.request.OAuthAuthorizeRequestBuilder;
 import com.gtt.kenshin.oauth.impl.response.*;
 import com.gtt.kenshin.oauth.impl.response.base.OAuthJsonResponse;
 import com.gtt.kenshin.oauth.impl.util.HttpClient;
+import com.gtt.kenshin.oauth.impl.util.LogProxy;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +36,7 @@ public class OAuthProviderQQ implements OAuthProvider {
 	private static final String URL_QQ_GET_OPENID = "https://graph.qq.com/oauth2.0/me";
 	private static final String URL_QQ_GET_USER_INFO = "https://graph.qq.com/user/get_user_info";
 	private OAuthProviderApp oAuthProviderApp;
+	private LogProxy logProxy;
 
 	@Override
 	public OAuthProviderType getProviderType() {
@@ -70,6 +72,7 @@ public class OAuthProviderQQ implements OAuthProvider {
 			thirdUserInfo.setThirdUserId(openID.getThirdID());
 			return thirdUserInfo;
 		} catch (Exception e) {
+			logProxy.err("get user info error", e);
 			return null;
 		}
 	}
@@ -108,6 +111,7 @@ public class OAuthProviderQQ implements OAuthProvider {
 			checkNotNull(jsonResponse);
 			return jsonResponse.getValues();
 		} catch (Exception e) {
+			logProxy.err("invoke url[" + url + "] error", e);
 			return null;
 		}
 	}
@@ -173,5 +177,9 @@ public class OAuthProviderQQ implements OAuthProvider {
 
 	public void setoAuthProviderApp(OAuthProviderApp oAuthProviderApp) {
 		this.oAuthProviderApp = oAuthProviderApp;
+	}
+
+	public void setLogProxy(LogProxy logProxy) {
+		this.logProxy = logProxy;
 	}
 }
