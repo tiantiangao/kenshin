@@ -13,6 +13,7 @@ import com.gtt.kenshin.oauth.impl.response.OAuthCodeResponse;
 import com.gtt.kenshin.oauth.impl.response.OAuthSinaAccessTokenResponse;
 import com.gtt.kenshin.oauth.impl.response.base.OAuthJsonResponse;
 import com.gtt.kenshin.oauth.impl.util.HttpClient;
+import com.gtt.kenshin.oauth.impl.util.LogProxy;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
@@ -36,6 +37,7 @@ public class OAuthProviderSina implements OAuthProvider {
 
 	private static final OAuthProviderType type = new OAuthProviderTypeSina();
 	private OAuthProviderApp oAuthProviderApp;
+	private LogProxy logProxy;
 
 	@Override
 	public OAuthProviderType getProviderType() {
@@ -70,6 +72,7 @@ public class OAuthProviderSina implements OAuthProvider {
 			thirdUserInfo.setThirdUserId(sinaAccessTokenResponse.getThirdID());
 			return thirdUserInfo;
 		} catch (Exception e) {
+			logProxy.err("getUserInfo err", e);
 			return null;
 		}
 	}
@@ -107,6 +110,7 @@ public class OAuthProviderSina implements OAuthProvider {
 			checkNotNull(jsonResponse);
 			return jsonResponse.getValues();
 		} catch (Exception e) {
+			logProxy.err("invoke url[" + url + "] error", e);
 			return null;
 		}
 	}
@@ -136,5 +140,9 @@ public class OAuthProviderSina implements OAuthProvider {
 
 	public void setoAuthProviderApp(OAuthProviderApp oAuthProviderApp) {
 		this.oAuthProviderApp = oAuthProviderApp;
+	}
+
+	public void setLogProxy(LogProxy logProxy) {
+		this.logProxy = logProxy;
 	}
 }
