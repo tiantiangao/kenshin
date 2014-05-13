@@ -88,6 +88,7 @@ Tips: 建议通过spring来使用
 <!-- 声明腾讯QQ的OAuth -->
 <bean id="oAuthProviderQQ" class="com.gtt.kenshin.oauth.impl.provider.impl.OAuthProviderQQ">
     <property name="oAuthProviderApp" ref="oAuthProviderAppConfigQQ"/>
+    <property name="logProxy" ref="oAuthLogProxy"/>
 </bean>
 
 <bean id="oAuthProviderAppConfigQQ" class="com.gtt.kenshin.oauth.impl.provider.impl.OAuthProviderAppConfig">
@@ -98,12 +99,15 @@ Tips: 建议通过spring来使用
 <!-- 声明新浪微博的OAuth -->
 <bean id="oAuthProviderSina" class="com.gtt.kenshin.oauth.impl.provider.impl.OAuthProviderSina">
     <property name="oAuthProviderApp" ref="oAuthProviderAppConfigSina"/>
+    <property name="logProxy" ref="oAuthLogProxy"/>
 </bean>
 
 <bean id="oAuthProviderAppConfigSina" class="com.gtt.kenshin.oauth.impl.provider.impl.OAuthProviderAppConfig">
     <property name="clientID" value="${oauth.sina.appid}"/>
     <property name="clientSecret" value="${oauth.sina.appsecret}" />
 </bean>
+
+<bean id="oAuthLogProxy" class="封装自己的日志实现类，实现LogProxy接口"/>
 
 ```
 
