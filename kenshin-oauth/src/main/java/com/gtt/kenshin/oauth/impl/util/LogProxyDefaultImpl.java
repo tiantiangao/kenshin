@@ -12,7 +12,7 @@ public class LogProxyDefaultImpl implements LogProxy {
 
 	@Override
 	public void err(String msg, Exception e) {
-		System.err.println("msg");
+		System.err.println(msg);
 		e.printStackTrace();
 	}
 }
